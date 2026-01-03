@@ -14,6 +14,7 @@
     font-family: "Josefin Sans", sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
+    scroll-margin-top: 80px; /* Offset for sticky header */
 }
 
 body {
@@ -110,6 +111,7 @@ nav ul li a:hover {
 /* Hero Section */
 .hero {
     height: 100vh;
+    height: 100svh; /* Dynamic viewport for modern mobile browsers */
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url(../img/akebi.jpg);
@@ -198,6 +200,10 @@ section {
 }
 
 /* Service / Medsos Section */
+.service {
+    background-color: #121212; /* Distinct dark tier */
+}
+
 .box {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -238,6 +244,10 @@ section {
 }
 
 /* Contact Section */
+#contact {
+    background-color: var(--bg-card); /* Consistent with About section */
+}
+
 .contact-me {
     width: 100%;
     height: 300px;
@@ -295,7 +305,7 @@ section {
 /* Footer */
 footer {
     padding: 50px 8%;
-    background: var(--bg-dark);
+    background: #0b0b0b; /* Ultra dark finish */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -381,11 +391,32 @@ footer p {
 
 @media (max-width: 768px) {
     .container, section {
-        padding: 60px 5%;
+        padding: 50px 6%;
     }
     .content {
         align-items: center;
         padding-left: 0;
         text-align: center;
+    }
+    .about-text h2 {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container, section {
+        padding: 40px 5%;
+    }
+    .hero h1 {
+        font-size: 38px;
+    }
+    .hero h3 {
+        font-size: 18px;
+    }
+    .card {
+        padding: 30px 20px;
+    }
+    .form-container {
+        padding: 25px 20px;
     }
 }
